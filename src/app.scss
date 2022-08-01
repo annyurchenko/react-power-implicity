@@ -1,0 +1,16 @@
+@use "sass:math";
+@use "sass:map";
+@import "./index.scss";
+
+.wrapper {
+  background: map.get($colors, "colorLightBrown");
+  background: linear-gradient(
+    90deg,
+    map.get($colors, "colorLightBrown") 0%,
+    map.get($colors, "colorDarkBrown") 100%
+  );
+  box-shadow: rem(0px) rem(0px) rem(250px) map.get($colors, "colorShadow");
+  border-radius: rem(32px);
+
+  margin: 134px 255px 144px;
+}

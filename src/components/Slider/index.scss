@@ -1,0 +1,82 @@
+@use "sass:math";
+@use "sass:map";
+@import "../../index.scss";
+
+.slider {
+  &__container {
+    padding: 184px 203px 229px;
+    justify-items: center;
+  }
+}
+
+.slide {
+  max-width: 598px;
+  margin-inline: auto;
+  color: map.get($colors, "colorDarkWhite");
+  font-weight: 300;
+  text-align: center;
+
+  &__title {
+    font-size: rem(72px);
+    line-height: rem(83px);
+    margin-bottom: 32px;
+  }
+
+  &__description {
+    font-size: rem(18px);
+    line-height: rem(21px);
+    margin-bottom: 80px;
+  }
+
+  &__button {
+    max-width: 239px;
+    padding: 16px 96px;
+    margin-bottom: 80px;
+
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(
+      45deg,
+      map.get($colors, "colorPink") 0%,
+      map.get($colors, "colorLilac") 100%
+    );
+    border-image-slice: 1;
+
+    &-text {
+      font-weight: 400;
+      font-size: rem(18px);
+      line-height: rem(21px);
+      text-align: center;
+
+      background: linear-gradient(
+        45deg,
+        map.get($colors, "colorPink") 0%,
+        map.get($colors, "colorLilac") 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    flex-direction: row;
+
+    max-width: 239px;
+    margin-inline: auto;
+    justify-content: space-between;
+    padding-block: 16px;
+  }
+
+  &__dot {
+    width: 16px;
+    height: 16px;
+    border: 3px solid map.get($colors, "colorDarkGray");
+    border-radius: 50%;
+
+    &--active {
+      border-color: map.get($colors, "colorWhite");
+    }
+  }
+}

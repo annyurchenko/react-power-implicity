@@ -1,0 +1,54 @@
+@use "sass:math";
+@use "sass:map";
+@import "../../index.scss";
+
+.nav {
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 32px;
+  align-items: center;
+
+  &__link {
+    width: 38px;
+    height: auto;
+  }
+
+  &__list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-around;
+  }
+
+  &__item {
+    align-self: center;
+    justify-self: center;
+
+    &-link {
+      text-decoration: none;
+      color: map.get($colors, "colorGray");
+      line-height: rem(16.1px);
+    }
+  }
+
+  &__button {
+    justify-self: flex-end;
+    max-width: 159px;
+    padding: 16px 24px;
+
+    font-weight: 400;
+    line-height: rem(16.1px);
+    color: map.get($colors, "colorBlack");
+
+    background: linear-gradient(
+      93.22deg,
+      map.get($colors, "colorWhite") 8.37%,
+      map.get($colors, "colorWhite") 99.95%
+    );
+    box-shadow: 0px 4px 50px map.get($colors, "colorShadowButtonDark"),
+      inset 1px 1px 1px map.get($colors, "colorShadowButtonLight");
+    border: none;
+    border-radius: 999px;
+  }
+}
