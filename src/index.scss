@@ -9,17 +9,18 @@
 
 $base-font-size: 14px;
 
-$breakpoints: (
-  tablet: rem(768px),
-  mobile: rem(568px),
-);
-
 @function strip($value) {
   @return math.div($value, ($value * 0 + 1));
 }
 
 @function rem($pxValue) {
   @return #{math.div(strip($pxValue), strip($base-font-size))}rem;
+}
+
+@mixin laptop {
+  @media (max-width: #{map-get($breakpoints, laptop)}) {
+    @content;
+  }
 }
 
 @mixin tablet {
@@ -39,6 +40,12 @@ $breakpoints: (
     @content;
   }
 }
+
+$breakpoints: (
+  laptop: rem(1024px),
+  tablet: rem(768px),
+  mobile: rem(568px),
+);
 
 $colors: (
   colorPink: rgba(252, 63, 95, 1),

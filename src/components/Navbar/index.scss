@@ -9,9 +9,25 @@
   grid-column-gap: 32px;
   align-items: center;
 
+  @include laptop {
+    padding: 22px;
+    grid-column-gap: 10px;
+  }
+
+  @include tablet {
+    padding: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 5px;
+  }
+
   &__link {
     width: 38px;
     height: auto;
+
+    @include tablet {
+      grid-area: 1 / 1 / 2 / 2;
+    }
   }
 
   &__list {
@@ -19,6 +35,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-around;
+
+    @include tablet {
+      grid-area: 2 / 1 / 3 / 3;
+    }
   }
 
   &__item {
@@ -50,5 +70,13 @@
       inset 1px 1px 1px map.get($colors, "colorShadowButtonLight");
     border: none;
     border-radius: 999px;
+
+    @include tablet {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+
+    @include mobile {
+      padding: 8px 12px;
+    }
   }
 }

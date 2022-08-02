@@ -12,5 +12,13 @@
   box-shadow: rem(0px) rem(0px) rem(250px) map.get($colors, "colorShadow");
   border-radius: rem(32px);
 
-  margin: 134px 255px 144px;
+  margin: 100px 200px;
+
+  @include laptop {
+    margin: 40px 80px;
+  }
+
+  @include tablet {
+    margin: 10px 30px;
+  }
 }
